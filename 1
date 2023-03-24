@@ -1,0 +1,17 @@
+import time
+import dateutil
+from tkinter import *
+import os
+def get_time():
+    time_str = time.strftime('%I :%M :%S :%p')
+    clock.config(text = time_str)
+    clock.after(200, get_time)
+
+root = Tk()
+root.title('DIGITAL CLOCK')
+
+clock = Label(root, font ='times 50 bold', bg ='black', foreground ='white')
+clock.pack()
+get_time()
+root.mainloop()
+
